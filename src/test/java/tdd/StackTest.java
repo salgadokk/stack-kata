@@ -8,7 +8,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 class StackTest {
 
     @Test
-    void firstTest() {
-        assertThat(true , is(true));
+    void isEmpty() {
+        Stack stack = new Stack();
+        assertThat(stack.isEmpty() , is(true));
     }
 }
