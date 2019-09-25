@@ -22,4 +22,15 @@ class StackTest {
         //assert
         assertThat(stack.isEmpty(), is(false));
     }
+
+    @Test
+    void emptyAfterPushPop() {
+        //arrange
+        Stack stack = new Stack();
+        //act
+        stack.push(1);
+        stack.pop();
+        //assert
+        assertThat(stack.isEmpty(), is(true));
+    }
 }
