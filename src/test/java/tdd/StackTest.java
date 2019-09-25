@@ -41,4 +41,14 @@ class StackTest {
         //act assert
         assertThat(stack.size(), is(0));
     }
+
+    @Test
+    void sizeOneAfterPush() {
+        //arrange
+        Stack stack = new Stack();
+        //act
+        stack.push(1);
+        //assert
+        assertThat(stack.size(), is(1));
+    }
 }

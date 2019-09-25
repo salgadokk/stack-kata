@@ -2,6 +2,7 @@ package tdd;
 
 public class Stack {
     private boolean isEmpty = true;
+    private int size = 0;
 
     public boolean isEmpty() {
         return isEmpty;
@@ -9,6 +10,7 @@ public class Stack {
 
     public void push(final int value) {
         isEmpty = false;
+        size++;
     }
 
     public void pop() {
@@ -16,6 +18,6 @@ public class Stack {
     }
 
     public int size() {
-        return 0;
+        return size;
     }
 }
