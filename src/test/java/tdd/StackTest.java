@@ -69,4 +69,24 @@ class StackTest {
         assertThat(stack.size(), is(2));
     }
 
+    @Test
+    void popReturnsPushedValue() {
+        //arrange
+        Stack stack = new Stack();
+        //act
+        stack.push(1);
+        //assert
+        assertThat(stack.pop(), is(1));
+    }
+
+    @Test
+    void popReturnsPushedValue_2() {
+        //arrange
+        Stack stack = new Stack();
+        //act
+        stack.push(2);
+        //assert
+        assertThat(stack.pop(), is(2));
+    }
+
 }
