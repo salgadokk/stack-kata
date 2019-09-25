@@ -51,4 +51,15 @@ class StackTest {
         //assert
         assertThat(stack.size(), is(1));
     }
+
+    @Test
+    void sizeZeroAfterPushPop() {
+        //arrange
+        Stack stack = new Stack();
+        //act
+        stack.push(1);
+        stack.pop();
+        //assert
+        assertThat(stack.size(), is(0));
+    }
 }

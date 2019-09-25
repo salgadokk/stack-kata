@@ -15,6 +15,7 @@ public class Stack {
 
     public void pop() {
         isEmpty = true;
+        size--;
     }
 
     public int size() {
