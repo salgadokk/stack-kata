@@ -33,4 +33,12 @@ class StackTest {
         //assert
         assertThat(stack.isEmpty(), is(true));
     }
+
+    @Test
+    void initialSizeZero() {
+        //arrange
+        Stack stack = new Stack();
+        //act assert
+        assertThat(stack.size(), is(0));
+    }
 }

@@ -14,4 +14,8 @@ public class Stack {
     public void pop() {
         isEmpty = true;
     }
+
+    public int size() {
+        return 0;
+    }
 }
