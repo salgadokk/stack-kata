@@ -2,20 +2,20 @@ package tdd;
 
 public class Stack {
     private int size = 0;
-    private int value;
+    private int[] values = new int[2];
 
     public boolean isEmpty() {
         return size == 0;
     }
 
     public void push(final int value) {
+        this.values[size] = value;
         size++;
-        this.value = value;
     }
 
     public int pop() {
         size--;
-        return value;
+        return values[size];
     }
 
     public int size() {

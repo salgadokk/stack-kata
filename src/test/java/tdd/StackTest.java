@@ -71,8 +71,6 @@ class StackTest {
 
     @Test
     void popReturnsPushedValue() {
-        //arrange
-        Stack stack = new Stack();
         //act
         stack.push(1);
         //assert
@@ -81,12 +79,20 @@ class StackTest {
 
     @Test
     void popReturnsPushedValue_2() {
-        //arrange
-        Stack stack = new Stack();
         //act
         stack.push(2);
         //assert
         assertThat(stack.pop(), is(2));
+    }
+
+    @Test
+    void popReturnsExpectedValues() {
+        //act
+        stack.push(1);
+        stack.push(2);
+        //assert
+        assertThat(stack.pop(), is(2));
+        assertThat(stack.pop(), is(1));
     }
 
 }
