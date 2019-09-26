@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class StackTest {
 
@@ -93,6 +94,11 @@ class StackTest {
         //assert
         assertThat(stack.pop(), is(2));
         assertThat(stack.pop(), is(1));
+    }
+
+    @Test
+    void popOnEmptyStackThrows() {
+        assertThrows(IllegalStateException.class, () -> stack.pop());
     }
 
 }

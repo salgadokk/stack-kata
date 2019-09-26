@@ -14,6 +14,8 @@ public class Stack {
     }
 
     public int pop() {
+        if (isEmpty())
+            throw new IllegalStateException();
         size--;
         return values[size];
     }
