@@ -1,20 +1,17 @@
 package tdd;
 
 public class Stack {
-    private boolean isEmpty = true;
     private int size = 0;
 
     public boolean isEmpty() {
-        return isEmpty;
+        return size == 0;
     }
 
     public void push(final int value) {
-        isEmpty = false;
         size++;
     }
 
     public void pop() {
-        isEmpty = true;
         size--;
     }
 

@@ -1,5 +1,6 @@
 package tdd;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -7,16 +8,20 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 class StackTest {
 
+    Stack stack;
+
+    @BeforeEach
+    void setup() {
+        stack = new Stack();
+    }
+
     @Test
     void isEmpty() {
-        Stack stack = new Stack();
         assertThat(stack.isEmpty(), is(true));
     }
 
     @Test
     void notEmptyAfterPush() {
-        //arrange
-        Stack stack = new Stack();
         //act
         stack.push(1);
         //assert
@@ -25,8 +30,6 @@ class StackTest {
 
     @Test
     void emptyAfterPushPop() {
-        //arrange
-        Stack stack = new Stack();
         //act
         stack.push(1);
         stack.pop();
@@ -36,16 +39,12 @@ class StackTest {
 
     @Test
     void initialSizeZero() {
-        //arrange
-        Stack stack = new Stack();
         //act assert
         assertThat(stack.size(), is(0));
     }
 
     @Test
     void sizeOneAfterPush() {
-        //arrange
-        Stack stack = new Stack();
         //act
         stack.push(1);
         //assert
@@ -54,8 +53,6 @@ class StackTest {
 
     @Test
     void sizeZeroAfterPushPop() {
-        //arrange
-        Stack stack = new Stack();
         //act
         stack.push(1);
         stack.pop();
@@ -65,8 +62,6 @@ class StackTest {
 
     @Test
     void sizeTwoAfterPushPush() {
-        //arrange
-        Stack stack = new Stack();
         //act
         stack.push(1);
         stack.push(1);
