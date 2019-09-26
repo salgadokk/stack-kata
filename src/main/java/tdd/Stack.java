@@ -9,6 +9,8 @@ public class Stack {
     }
 
     public void push(final int value) {
+        if (size == values.length)
+            this.values = copyArray(this.values);
         this.values[size] = value;
         size++;
     }
@@ -22,5 +24,12 @@ public class Stack {
 
     public int size() {
         return size;
+    }
+
+    private int[] copyArray(int[] oldArray) {
+        int[] newValues = new int[oldArray.length * 2];
+        for (int i = 0; i < oldArray.length; i++)
+            newValues[i] = oldArray[i];
+        return newValues;
     }
 }

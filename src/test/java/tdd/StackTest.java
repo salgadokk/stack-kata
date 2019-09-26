@@ -3,6 +3,8 @@ package tdd;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.stream.IntStream;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -99,6 +101,28 @@ class StackTest {
     @Test
     void popOnEmptyStackThrows() {
         assertThrows(IllegalStateException.class, () -> stack.pop());
+    }
+
+    @Test
+    void anyNumberOfPush() {
+        //act
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        //assert
+        assertThat(stack.pop(), is(5));
+        assertThat(stack.pop(), is(4));
+        assertThat(stack.pop(), is(3));
+        assertThat(stack.pop(), is(2));
+        assertThat(stack.pop(), is(1));
+    }
+
+    @Test
+    void anyNumberOfPush_2() {
+        IntStream.range(0, 1000).forEach(v -> stack.push(v));
+        IntStream.range(1000, 0).forEach(v -> assertThat(stack.pop(), is(v)));
     }
 
 }
